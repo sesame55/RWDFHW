@@ -1,0 +1,204 @@
+@import 'grid'; //斷點
+
+html,
+body {
+    height: 100%;
+}
+.wrap {
+    max-width: 1024px;
+    min-height: 100%;
+    margin: 0 auto;
+    position: relative;
+    @include phoneH(){
+        overflow: hidden;
+    }
+}
+.header {
+    background: url(../img/header_desktop.png);
+    height: 420px;
+    position: relative;
+    @include phoneH(){
+        background: url(../img/header_mobile@2x.png);
+        background-size: cover;
+    }
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000bf;
+    // background-color: green;
+    height: 60px;
+    @include tablet() {
+        display: block;
+    }
+    a img {
+        display: block;
+        margin-left: 55px;
+        // border: 1px solid #ffffff;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    ul {
+        display: flex;
+        z-index: 100;
+        li a {
+            display: block;
+            color: #ffffff;
+            font-size: 20px;
+            font-family: 'NotoSansCJKtc-Black';
+            font-family: '微軟正黑體';
+            margin-right: 30px;
+        }
+        @include tablet() {
+            display: block;
+            max-height: 0px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #000000da;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            left: 0;
+            z-index: 100;
+            transition: max-height 1s;
+            li {
+                width: 100%;
+                border-bottom: 1px solid #ffffff;
+                a {
+                    padding-top: 1em;
+                    padding-bottom: 1em;
+                }
+            }
+        }
+    }
+}
+.active .menu {
+    // display: block;
+    max-height: 250px;
+}
+.mobile-menu-btn {
+    display: none;
+    @include tablet() {
+        display: block;
+        color: #fff;
+        position: absolute;
+        right: 24px;
+        top: 21px;
+        font-size: 24px;
+    }
+}
+.banner {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 65px;
+    padding: 25px;
+    background-color: #00000059;
+    color: #fff;
+    text-align: center;
+    font-family: 'MicrosoftJhengHeiRegular';
+    font-family: '微軟正黑體';
+    @include tablet() {
+        width: 70%;
+    }
+    @include phoneH(){
+        width: 90%;
+        
+    }
+    h3 {
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
+    p {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+}
+
+.footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #efe9e7;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    @include tablet() {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @include phoneH() {
+        flex-direction: column;
+        a{
+            display: block;
+            text-align: right;
+            margin-right: 10px;
+        }
+    }
+    .about,
+    .contact {
+        width: 30%;
+        color: #3d1101;
+        font-family: '微軟正黑體';
+        @include tablet() {
+            width: 27%;
+        }
+        @include phoneH() {
+            width: 100%;
+            margin: 5%;
+        }
+    }
+    .about h3,
+    .contact h3 {
+        font-size: 24px;
+    }
+    .about p,
+    .contact ul {
+        // margin-top: 16px;
+        padding: 1em;
+        font-size: 16px;
+        // line-height: 1.2;
+    }
+    .about p {
+        line-height: 1.2;
+        padding-left: 0px;
+    }
+    .contact li {
+        list-style: disc;
+        line-height: 1.2;
+    }
+    .icon {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 22px;
+        li {
+            margin-right: 12px;
+            // border: 1px solid green;
+            // border-radius: 5px;
+            .google,
+            .fb,
+            .twitter {
+                font-size: 36px;
+            }
+            .google {
+                color: #db4437;
+            }
+            .fb {
+                color: #3a5795;
+            }
+            .twitter {
+                color: #41abe1;
+            }
+        }
+    }
+}
+.content {
+    width: 100%;
+    background: #efe9e7;
+    padding-bottom: 245px;
+
+    @include phoneH() {
+        padding-bottom: 450px;
+    }
+}
